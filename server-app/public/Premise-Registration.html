@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Premise Registration</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+    <body>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                 <font size="5 em"> <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;&nbsp;PREMISE REGISTRATION</font>
+                            </div>
+                            <div class="panel-body">
+                                <form name="form_Premise_Registartion" id = "id_form_Premise_Registartion" method="POST" action="">
+                                    <table class="table table-striped">
+                                        <tr>    
+                                        <tr>
+                                            <td>Premise Name</td>
+                                            <td align = "center"><input type="text" class="form-control custom" id="name" name="name" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Premise Type</td>
+                                            <td align = "center"><input type="text" class="form-control custom" id="type" name="type" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Address</td>
+                                            <td align = "center"><input type="text" class="form-control custom" id="address" name="address" ></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Open Timings</td>
+                                            <td align = "center"><input type="text" class="form-control custom" id="timings" name="timings"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Instructions</td>
+                                            <td align = "center"><input type="text" class="form-control custom" id="instructions" name="instructions"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Description</td>
+                                            <td align = "center"><input type="text" class="form-control custom" id="description" name="description"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Latitude</td>
+                                            <td align = "center"><input type="text" class="form-control custom" id="latitude" name="latitude"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Longitude</td>
+                                            <td align = "center"><input type="text" class="form-control custom" id="longitude" name="longitude"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Max Limit Allowed</td>
+                                            <td align = "center"><input type="text" class="form-control custom" id="maxLimit" name="maxLimit"></td>
+                                        </tr>
+                                            <input type="hidden" id="currentStrength" name="currentStrength" value="0">
+                                    </table>
+                                    <div align="center">            
+                                        <button class="btn btn-info btn-lg btn-Calculate" id="savePremise" onclick="return performSave()">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div align="center">            
+                            <span id="id_message">&nbsp;</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="javascript/messageResource.min.js"></script>
+    <script src="javascript/save-premise.js"></script>
+  </body>
+</html>

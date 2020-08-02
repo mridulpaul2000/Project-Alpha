@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Scanner</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./javascript/qr_packed.js"></script>
+</head>
+
+    <body>
+        <div id="container">
+            <h1>Premise Exit Gate</h1>
+            <h2>QR Code Scanner</h2>
+            <h3>(Please click below and allow access to Camera)</h3>
+            <input type="hidden" id="gateType" name="gateType" value="exit">
+
+            <a id="btn-scan-qr">
+                <img src="./images/qr_icon.svg">
+            </a>
+
+            <canvas hidden="" id="qr-canvas"></canvas>
+
+            <div id="qr-result" hidden="">
+                <b>Data:</b> <span id="outputData"></span>
+            </div>
+        </div>
+
+		<script src="javascript/messageResource.min.js"></script>
+        <script src="./javascript/qrCodeScanner.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </body>
+</html>
