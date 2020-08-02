@@ -214,11 +214,11 @@ To view the establishments (malls, restaurants and parks), pl follow the steps t
 
 With the application running in the simulator/emulator, you should be able to navigate through the various screens:
 
-![Search Screen](/images/Search-Screen.png)
-![Detail Screen](/images/Detail-Screen.png)
-![Visit Screen](/images/Visit-Details.png)
-![QR Screen](/images/QR-Code.png)
-![Map Screen](/images/Map-View.png)
+![Search Screen](/images/01-search-screen.png)
+![Detail Screen](/images/02-detail-screen.png)
+![Visit Screen](/images/03-visit-screen.png)
+![QR Screen](/images/04-qr-screen.png)
+![Map Screen](/images/05-map-screen.png)
 
 
 ### 6. Resources
