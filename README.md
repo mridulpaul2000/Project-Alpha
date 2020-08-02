@@ -172,7 +172,7 @@ To set up and launch the server application:
             1. Push the app to IBM Cloud: `ibmcloud app push`.
             1. The server can be accessed at a URL using the **name** given in the `manifest.yml` file (for example,  <https://my-app-name.bluemix.net>).
 1. Go to the `project-alpha/server-app/public`
-1. Open env.properties file and update the following:
+1. Open `env.properties` file and update the following:
 	1. SERVER_URL pointing to **Cloud Function** API URL generated in Step 2
 	1. PREMISE-ENTRY-EXIT_URL pointing to server created in earlier steps (either http://localhost:3000/api/update/ or https://my-app-name.bluemix.net/api/update/)
 
@@ -208,7 +208,7 @@ To view the establishments (malls, restaurants and parks), pl follow the steps t
 1. Open web browser with URL <PREMISE-ENTRY-EXIT_URL>/Premise-Entry-Gate.html (where PREMISE-ENTRY-EXIT_URL is from step 3)
 1. Scan the QR code generated in mobile app (earlier step)
 1. This will increase the current strength of the establishment selected 
-1. Open web browser with URL <PREMISE-ENTRY-EXIT_URL>/Premise-Entry-Gate.html (where PREMISE-ENTRY-EXIT_URL is from step 3)
+1. Open web browser with URL https://<PREMISE-ENTRY-EXIT_URL>/Premise-Entry-Gate.html (where PREMISE-ENTRY-EXIT_URL is from step 3)
 1. Scan the QR code generated in mobile app (earlier step)
 1. This will decrease the current strength of the establishment selected 
 
