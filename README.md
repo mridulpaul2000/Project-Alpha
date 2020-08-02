@@ -178,8 +178,7 @@ To set up and launch the server application:
 To run the mobile application (using real device):
 
 1. Go to the `project-alpha/mobile-app` directory of the cloned repo.
-1. Copy the `.env.example` file in the `project-alpha/mobile-app` directory, and create a file named `.env`.
-1. Edit the newly created `.env` file:
+1. Edit  `app.env` file as follows:
     - Update the `API_URL` with the URL to the server app launched in the previous step.
 1. From a terminal:
     1. Go to the `starter-kit/mobile-app` directory.
