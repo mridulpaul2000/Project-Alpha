@@ -39,5 +39,5 @@ This idea focusses on limiting crowd in business establishments by providing rea
 
 ## Demo video
 
-[![Watch the video]](https://youtu.be/_BmSglB1LZo)
+![Watch the video](https://youtu.be/_BmSglB1LZo)
 
