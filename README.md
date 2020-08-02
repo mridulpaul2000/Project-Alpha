@@ -41,3 +41,30 @@ This idea focusses on limiting crowd in business establishments by providing rea
 
 ![Watch the video](https://youtu.be/_BmSglB1LZo)
 
+## The architecture
+
+![Roadmap](project-alpha-architecture.png)
+
+## Project roadmap
+
+![Roadmap](Project-Alpha-Solution-Roadmap.png)
+
+## Getting started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+- Register for an [IBM Cloud](https://www.ibm.com/account/reg/us-en/signup?formid=urx-42793&eventid=cfc-2020?cm_mmc=OSocial_Blog-_-Audience+Developer_Developer+Conversation-_-WW_WW-_-cfc-2020-ghub-starterkit-cooperation_ov75914&cm_mmca1=000039JL&cm_mmca2=10008917) account.
+- Install and configure [IBM Cloud CLI](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started#overview).
+- Install [React Native CLI dependencies](https://reactnative.dev/docs/getting-started.html). See the [React Native documentation](https://reactnative.dev/docs/environment-setup) for the exact steps and requirements based on your Operating System and Target OS. For example:
+    - **iOS on macOS**
+        - [Node.js](https://nodejs.org/en/)
+        - [Watchman](https://facebook.github.io/watchman/docs/install)
+        - [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+        - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
+    - **Android on Windows**
+        - [Node.js](https://nodejs.org/en/)
+        - [Android Studio](https://developer.android.com/studio/index.html) - add Android 9 (Pie) SDK & configure `ANDROID_HOME`
+        - [Create an Android Virtual Device (AVD)](https://developer.android.com/studio/run/managing-avds.html) - with Pie image (API Level 28)
+- Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Cooperation-2020).
