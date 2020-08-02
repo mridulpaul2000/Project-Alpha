@@ -14,6 +14,7 @@ Pl visit  [![Website](https://callforcode.org/) for more details on the event.
 1. [Getting started](#getting-started)
 1. [Running the tests](#running-the-tests)
 1. [Resources](#resources)
+1. [Authors](#authors)
 
 ## Short description
 
@@ -217,3 +218,6 @@ To view the establishments (malls, restaurants and parks), pl follow the steps t
 - [IBM Cloud Functions](https://cloud.ibm.com/functions)
 - [Node.js](https://nodejs.org)
 - [React Native](https://reactnative.dev/)
+
+### 7. Authors
+- Mridul Paul
