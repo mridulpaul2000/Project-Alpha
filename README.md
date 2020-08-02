@@ -1,6 +1,8 @@
 # Project-Alpha
 
-This Repository contains artifacts pertaining Call for Code 2020 on Theme : COVID-19. Pl visit  [![Website] (https://callforcode.org/) for more details on the event.
+This Repository contains artifacts pertaining Call for Code 2020 on Theme : COVID-19. 
+
+Pl visit  [![Website](https://callforcode.org/) for more details on the event.
 
 ## Contents
 
@@ -11,13 +13,7 @@ This Repository contains artifacts pertaining Call for Code 2020 on Theme : COVI
 1. [Project roadmap](#project-roadmap)
 1. [Getting started](#getting-started)
 1. [Running the tests](#running-the-tests)
-1. [Live demo](#live-demo)
-1. [Built with](#built-with)
-1. [Contributing](#contributing)
-1. [Versioning](#versioning)
-1. [Authors](#authors)
-1. [License](#license)
-1. [Acknowledgments](#acknowledgments)
+1. [Resources](#resources)
 
 ## Short description
 
@@ -172,6 +168,10 @@ To set up and launch the server application:
             1. Target a Cloud Foundry org and space: `ibmcloud target --cf`.
             1. Push the app to IBM Cloud: `ibmcloud app push`.
             1. The server can be accessed at a URL using the **name** given in the `manifest.yml` file (for example,  <https://my-app-name.bluemix.net>).
+1. Go to the `project-alpha/server-app/public`
+1. Open env.properties file and update the following:
+	1. SERVER_URL pointing to **Cloud Function** API URL generated in Step 2
+	1. PREMISE-ENTRY-EXIT_URL pointing to server created in earlier steps (either http://localhost:3000/api/update/ or https://my-app-name.bluemix.net/api/update/)
 
 ### 4. Run the mobile application
 
@@ -191,3 +191,29 @@ To run the mobile application (using real device):
             > **Note**: You should be running at least iOS 13.0. The first time you launch the simulator, you should ensure that you set a Location in the Features menu.
         - **Android only**: `npm run android`
             > **Note**: Your Android Studio needs to have the `Android 9 (Pie)` SDK and a `Pie API Level 28` virtual device    
+
+### 5. Running the tests
+
+To view the establishments (malls, restaurants and parks), pl follow the steps to add some entries in the database:
+1. Register establishments
+	1. Open web browser and type <SERVER_URL>/Premise-Registration.html
+	1. Enter the fields such as name, type (**mall** or **restaurant** or **park**), latitude, longitude (select co-ordinates close to your location) and other fields
+1. Open the mobile app and view those establishments in **Search** as well as **Map** screens
+1. Select any establishment and press **"Wish to Visit?"**
+1. Enter name, mobile number, total guests and press **save**
+1. Got to **QR Code** screen and press **Generate QR Code**
+1. Open web browser with URL <SERVER_URL>/Premise-Entry-Gate.html
+1. Scan the QR code generated in mobile app (earlier step)
+1. This will increase the current strength of the establishment selected 
+1. Open web browser with URL <SERVER_URL>/Premise-Entry-Gate.html
+1. Scan the QR code generated in mobile app (earlier step)
+1. This will decrease the current strength of the establishment selected 
+
+
+### 6. Resources
+
+- [IBM Cloud](https://www.ibm.com/cloud)
+- [IBM Cloudant](https://cloud.ibm.com/docs/Cloudant?topic=cloudant-overview)
+- [IBM Cloud Functions](https://cloud.ibm.com/functions)
+- [Node.js](https://nodejs.org)
+- [React Native](https://reactnative.dev/)
