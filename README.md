@@ -150,3 +150,24 @@ Then create an API as follows:
 1. Set path to /new
 1. Set verb to POST
 1. Select the read-establishment-entries-sequence action
+
+### 3. Run the server
+
+To set up and launch the server application:
+
+1. Go to the `project-alpha/server-app` directory of the cloned repo.
+1. Copy the `.env.example` file in the `project-alpha/server-app` directory, and create a new file named `.env`.
+1. Edit the newly created `.env` file and update the `CLOUDANT_ID` and `CLOUDANT_IAM_APIKEY` with the values from the service credential you created in Step 1. (Note that the `username` from the credential is what should be used for the `CLOUDANT_ID`.)
+1. Edit the **name** value in the `manifest.yml` file to your application name (for example, _my-app-name_).
+1. From a terminal:
+    1. Go to the `alpha-alpha/server-app` directory of the cloned repo.
+    1. Install the dependencies: `npm install`.
+    1. Launch the server application locally or deploy to IBM Cloud:
+        - To run locally:
+            1. Start the application: `npm start`.
+            1. The server can be accessed at <http://localhost:3000>.
+        - To deploy to IBM Cloud:
+            1. Log in to your IBM Cloud account using the IBM Cloud CLI: `ibmcloud login`.
+            1. Target a Cloud Foundry org and space: `ibmcloud target --cf`.
+            1. Push the app to IBM Cloud: `ibmcloud app push`.
+            1. The server can be accessed at a URL using the **name** given in the `manifest.yml` file (for example,  <https://my-app-name.bluemix.net>).
