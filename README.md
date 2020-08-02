@@ -68,3 +68,76 @@ These instructions will get you a copy of the project up and running on your loc
         - [Android Studio](https://developer.android.com/studio/index.html) - add Android 9 (Pie) SDK & configure `ANDROID_HOME`
         - [Create an Android Virtual Device (AVD)](https://developer.android.com/studio/run/managing-avds.html) - with Pie image (API Level 28)
 - Clone the [repository](https://github.com/Call-for-Code/Solution-Starter-Kit-Cooperation-2020).
+
+### Steps
+
+1. [Provision a CouchDB instance using Cloudant](#1-Provision-a-CouchDB-instance-using-Cloudant).
+1. [Setup Serverless Cloud Functions](#2-setup-cloud-functions).
+1. [Run the server](#3-run-the-server).
+1. [Run the mobile application](#4-run-the-mobile-application).
+
+### 1: Provision a CouchDB instance using Cloudant
+
+Log into the IBM Cloud and provision a [CouchDB instance using Cloudant](https://www.ibm.com/cloud/cloudant).
+
+1. From the catalog, select Databases and then the Cloudant panel.
+1. Once selected, you can choose your Cloudant plan -- there is a free tier for simple testing that is sufficient to run this CIR example. You should choose an appropriate region, give the service a name, and it is recommended you choose **Use only IAM** under **Available authentication methods**. You can leave the other settings with their defaults. Click the blue **Create** button when ready.
+1. Once your Cloudant instance has been created, you need to create a service credential that the CIR API Server can use to communicate with it. By selecting your running Cloudant instance, you can choose **Service credentials** from the left-hand menu. Create a new service credential and give it a name (it doesn't matter what you call it).
+1. Once created, you can display the credentials by selecting **view service credentials**, and then copy the credential, so you are ready to paste it into the code of the API server in Step 4.
+
+### 2 : Setup Serverless Cloud Function
+
+Log into the IBM Cloud and provision a [Cloud functions] (https://cloud.ibm.com/functions).
+
+1. In the browser, open a tab and go to Functions.
+1. From the namespace drop-down on the top right either select an existing namespace or use Create Namespace to create a new one.
+1. With a namespace selected, click on Actions in the left pane and then Create on the right.
+1. Under Create click on Action to open the Create Action form.
+1. Enter prepare-entry-for-save as name, click Create Package to create a new package with name guestbook and pick a Node.js as Runtime (Note: Pick the latest version). Click Create to create the action.
+1. In the new dialog replace the existing code with the code snippet below:
+
+```bash
+/**
+ * Prepare the premise registration entry to be persisted
+ */
+function main(params) {
+  if (!params.type || !params.name || !params.latitude || !params.longitude || !params.maxLimit) {
+    return Promise.reject({ error: 'no type or name or latitude or longitude or maxlimit'});
+  }
+  
+  const todaysDate = new Date();
+
+  return {
+    doc: {
+      type: params.type,
+      name: params.name,
+      description: params.description,
+      address: params.address,
+      timings: params.timings,
+      instructions: params.instructions,
+      latitude: params.latitude,
+      longitude: params.longitude,
+      maxLimit: params.maxLimit,
+      currentStrength: (params.currentStrength) ? params.currentStrength : 0,
+      whenCreated: todaysDate,
+      lastModified: todaysDate
+    }
+  };
+}
+```
+1. Thereafter click Save.
+1. Then add the action to a sequence:
+
+1. On the left pane, click on Enclosing Sequences and then Add To Sequence.
+1. Under Create New set the Sequence Name to save-guestbook-entry-sequence and choose guestbook as package.
+1. Then finish by clicking Create and Add.
+
+Now, add the second action to that sequence:
+
+1. Click on the entry save-guestbook-entry-sequence. It opens sequence details. Then click Add on the upper right.
+1. Instead of Create New select Use Public. It loads and displays icons for available integrations. Pick Cloudant.
+1. Under Actions choose create-document.
+1. Create a New Binding and complete the form as follows:
+1. Set Name to binding-for-guestbook.
+1. For Instance select your instance, for the credentials for-guestbook as created earlier, and as Database pick guestbook.
+1. Click Add, thereafter Save.
