@@ -2,7 +2,7 @@
 
 This Repository contains artifacts pertaining Call for Code 2020 on Theme : COVID-19. 
 
-Pl visit  [![Website](https://callforcode.org/) for more details on the event.
+Pl visit  [![Website](https://img.shields.io/badge/View-Website-blue)](https://callforcode.org/) for more details on the event.
 
 ## Contents
 
@@ -23,7 +23,9 @@ The idea enables people to avoid crowded places (grocery stores, restaurants, sh
 ### What's the problem?
 
 Most countries are proceeding with post lockdown phase, to revive commerce in times of crisis. Consequently, there are several challenges coming up in this new normal. One such challenge is how to avoid crowding various business establishments (such as shopping centers, restaurants, public  parks, offices and public/private institutions) to curb the Covid-19 spread.
+
 Governments are rolling out larger initiatives through publishing broadcasts and traditional social media, to create awareness and impose restrictions (for example, limiting the number of people at any given time). 
+
 However, this one way communication lacks local focus and real time information about places people plan to visit. Finally, the individual is left on their own to go out. People have to think twice to venture out for important activities such as doing daily groceries.
 
 ### How can technology help?
@@ -32,7 +34,7 @@ The solution enables people with a mobile app, that allows them to get real-time
 
 ### The idea
 
-This idea focusses on limiting crowd in business establishments by providing real-time information to people to help decide on places that are safe to visit. The establishments, in this context, are a premise that are gated and have entry/exit gates. These can be shopping malls, restaurants, parks and offices in any region, country or geography. The ideas also helps authorities to monitor crowd information in such places, in real time and enable them to take appropriate decisions, actions.
+This idea focuses on limiting crowd in business establishments by providing real-time information to people to help decide on places that are safe to visit. The establishments, in this context, are a premise that are gated and have entry/exit gates. These can be shopping malls, restaurants, parks and offices in any region, country or geography. The ideas also helps authorities to monitor crowd information in such places, in real time and enable them to take appropriate decisions, actions.
 
 ## Demo video
 
@@ -142,7 +144,7 @@ Now, add the second action to that sequence:
 Then create an API as follows:
 1. Go to Actions.
 1. Select the `save-establishment-entries-sequence` sequence. Next to the name, click on **Web Action**, check **Enable as Web Action** and **Save**.
-1. Go to APIs and click **Create API** (or **Create Managed API **if you have existing APIs).
+1. Go to APIs and click **Create API** (or **Create Managed API** if you have existing APIs).
 1. Set the API name to `alphacloudant` and, accordingly, the base path to `/alphacloudant`.
 1. Click on **Create operation** and create an operation to save establishment entries:
     1. Set **path** to `/new`
@@ -197,18 +199,26 @@ To run the mobile application (using real device):
 
 To view the establishments (malls, restaurants and parks), pl follow the steps to add some entries in the database:
 1. Register establishments
-	1. Open web browser and type <SERVER_URL>/Premise-Registration.html
+	1. Open web browser and type https://<SERVER_URL>/Premise-Registration.html (where SERVER_URL is from step 3)
 	1. Enter the fields such as name, type (**mall** or **restaurant** or **park**), latitude, longitude (select co-ordinates close to your location) and other fields
 1. Open the mobile app and view those establishments in **Search** as well as **Map** screens
 1. Select any establishment and press **"Wish to Visit?"**
 1. Enter name, mobile number, total guests and press **save**
 1. Got to **QR Code** screen and press **Generate QR Code**
-1. Open web browser with URL <SERVER_URL>/Premise-Entry-Gate.html
+1. Open web browser with URL <PREMISE-ENTRY-EXIT_URL>/Premise-Entry-Gate.html (where PREMISE-ENTRY-EXIT_URL is from step 3)
 1. Scan the QR code generated in mobile app (earlier step)
 1. This will increase the current strength of the establishment selected 
-1. Open web browser with URL <SERVER_URL>/Premise-Entry-Gate.html
+1. Open web browser with URL <PREMISE-ENTRY-EXIT_URL>/Premise-Entry-Gate.html (where PREMISE-ENTRY-EXIT_URL is from step 3)
 1. Scan the QR code generated in mobile app (earlier step)
 1. This will decrease the current strength of the establishment selected 
+
+With the application running in the simulator/emulator, you should be able to navigate through the various screens:
+
+![Search Screen](/images/Search-Screen.png)
+![Detail Screen](/images/Detail-Screen.png)
+![Visit Screen](/images/Visit-Details.png)
+![QR Screen](/images/QR-Code.png)
+![Map Screen](/images/Map-View.png)
 
 
 ### 6. Resources
