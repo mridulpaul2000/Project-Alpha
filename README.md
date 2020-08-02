@@ -87,13 +87,13 @@ Log into the IBM Cloud and provision a [CouchDB instance using Cloudant](https:/
 
 ### 2 : Setup Serverless Cloud Function
 
-Log into the IBM Cloud and provision a [Cloud functions] (https://cloud.ibm.com/functions).
+Log into the IBM Cloud and provision a [Cloud functions](https://cloud.ibm.com/functions).
 
 1. In the browser, open a tab and go to Functions.
 1. From the namespace drop-down on the top right either select an existing namespace or use Create Namespace to create a new one.
 1. With a namespace selected, click on Actions in the left pane and then Create on the right.
 1. Under Create click on Action to open the Create Action form.
-1. Enter prepare-entry-for-save as name, click Create Package to create a new package with name guestbook and pick a Node.js as Runtime (Note: Pick the latest version). Click Create to create the action.
+1. Enter prepare-entry-for-save as name, click Create Package to create a new package with name alpha-functions and pick a Node.js as Runtime (Note: Pick the latest version). Click Create to create the action.
 1. In the new dialog replace the existing code with the code snippet below:
 
 ```bash
@@ -126,18 +126,27 @@ function main(params) {
 }
 ```
 1. Thereafter click Save.
-1. Then add the action to a sequence:
 
+Then add the action to a sequence:
 1. On the left pane, click on Enclosing Sequences and then Add To Sequence.
-1. Under Create New set the Sequence Name to save-guestbook-entry-sequence and choose guestbook as package.
+1. Under Create New set the Sequence Name to save-establishment-entry-sequence and choose alpha-functions as package.
 1. Then finish by clicking Create and Add.
 
 Now, add the second action to that sequence:
-
-1. Click on the entry save-guestbook-entry-sequence. It opens sequence details. Then click Add on the upper right.
+1. Click on the entry save-establishment-entry-sequence. It opens sequence details. Then click Add on the upper right.
 1. Instead of Create New select Use Public. It loads and displays icons for available integrations. Pick Cloudant.
 1. Under Actions choose create-document.
 1. Create a New Binding and complete the form as follows:
-1. Set Name to binding-for-guestbook.
-1. For Instance select your instance, for the credentials for-guestbook as created earlier, and as Database pick guestbook.
+2. Set Name to alpha-cloudant.
+2. For Instance, Credentials and Database, select your cloudant details created in Step 1.
 1. Click Add, thereafter Save.
+
+Then create an API as follows:
+1. Go to Actions.
+1. Select the save-establishment-entries-sequence sequence. Next to the name, click on Web Action, check Enable as Web Action and Save.
+1. Go to APIs and click Create API (or Create Managed API if you have existing APIs).
+1. Set the API name to alphacloudant and, accordingly, the base path to /alphacloudant.
+1. Click on Create operation and create an operation to save establishment entries:
+1. Set path to /new
+1. Set verb to POST
+1. Select the read-establishment-entries-sequence action
