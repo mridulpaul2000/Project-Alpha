@@ -39,15 +39,15 @@ This idea focusses on limiting crowd in business establishments by providing rea
 
 ## Demo video
 
-[![Watch the video]()](https://youtu.be/_BmSglB1LZo)
+[![Watch the video](/images/video-screen.png)](https://youtu.be/_BmSglB1LZo)
 
 ## The architecture
 
-![Roadmap](project-alpha-architecture.png)
+![Roadmap](/images/project-alpha-architecture.png)
 
 ## Project roadmap
 
-![Roadmap](Project-Alpha-Solution-Roadmap.png)
+![Roadmap](/images/Project-Alpha-Solution-Roadmap.png)
 
 ## Getting started
 
