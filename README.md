@@ -90,10 +90,10 @@ Log into the IBM Cloud and provision a [CouchDB instance using Cloudant](https:/
 Log into the IBM Cloud and provision a [Cloud functions](https://cloud.ibm.com/functions).
 
 1. In the browser, open a tab and go to Functions.
-1. From the namespace drop-down on the top right either select an existing namespace or use Create Namespace to create a new one.
-1. With a namespace selected, click on Actions in the left pane and then Create on the right.
-1. Under Create click on Action to open the Create Action form.
-1. Enter prepare-entry-for-save as name, click Create Package to create a new package with name alpha-functions and pick a Node.js as Runtime (Note: Pick the latest version). Click Create to create the action.
+1. From the namespace drop-down on the top right either select an existing namespace or use **Create Namespace** to create a new one.
+1. With a namespace selected, click on **Actions** in the left pane and then **Create** on the right.
+1. Under **Create** click on **Action** to open the **Create Action** form.
+1. Enter `prepare-entry-for-save` as name, click **Create Package** to create a new package with name `alpha-functions` and pick a **Node.js** as **Runtime** (Note: Pick the latest version). Click **Create** to create the action.
 1. In the new dialog replace the existing code with the code snippet below:
 
 ```bash
@@ -125,31 +125,32 @@ function main(params) {
   };
 }
 ```
-1. Thereafter click Save.
+1. Thereafter click **Save**.
 
 Then add the action to a sequence:
-1. On the left pane, click on Enclosing Sequences and then Add To Sequence.
-1. Under Create New set the Sequence Name to save-establishment-entry-sequence and choose alpha-functions as package.
-1. Then finish by clicking Create and Add.
+
+1. On the left pane, click on **Enclosing Sequences** and then **Add To Sequence**.
+1. Under **Create New** set the **Sequence Name** to `save-establishment-entry-sequence` and choose **alpha-functions** as package.
+1. Then finish by clicking **Create and Add**.
 
 Now, add the second action to that sequence:
-1. Click on the entry save-establishment-entry-sequence. It opens sequence details. Then click Add on the upper right.
-1. Instead of Create New select Use Public. It loads and displays icons for available integrations. Pick Cloudant.
-1. Under Actions choose create-document.
+1. Click on the entry `save-establishment-entry-sequence`. It opens sequence details. Then click **Add** on the upper right.
+1. Instead of **Create New** select **Use Public**. It loads and displays icons for available integrations. Pick **Cloudant**.
+1. Under **Actions** choose **create-document**.
 1. Create a New Binding and complete the form as follows:
-2. Set Name to alpha-cloudant.
-2. For Instance, Credentials and Database, select your cloudant details created in Step 1.
-1. Click Add, thereafter Save.
+    1. Set **Name** to `alpha-cloudant`.
+    1. For **Instance**, **Credentials** and **Database**, select your cloudant details created in Step 1.
+1. Click **Add**, thereafter **Save**.
 
 Then create an API as follows:
 1. Go to Actions.
-1. Select the save-establishment-entries-sequence sequence. Next to the name, click on Web Action, check Enable as Web Action and Save.
-1. Go to APIs and click Create API (or Create Managed API if you have existing APIs).
-1. Set the API name to alphacloudant and, accordingly, the base path to /alphacloudant.
-1. Click on Create operation and create an operation to save establishment entries:
-1. Set path to /new
-1. Set verb to POST
-1. Select the read-establishment-entries-sequence action
+1. Select the `save-establishment-entries-sequence` sequence. Next to the name, click on **Web Action**, check **Enable as Web Action** and **Save**.
+1. Go to APIs and click **Create API** (or **Create Managed API **if you have existing APIs).
+1. Set the API name to `alphacloudant` and, accordingly, the base path to `/alphacloudant`.
+1. Click on **Create operation** and create an operation to save establishment entries:
+    1. Set **path** to `/new`
+    1. Set **verb** to `POST`
+1. Select the `save-establishment-entries-sequence` action
 
 ### 3. Run the server
 
@@ -171,3 +172,23 @@ To set up and launch the server application:
             1. Target a Cloud Foundry org and space: `ibmcloud target --cf`.
             1. Push the app to IBM Cloud: `ibmcloud app push`.
             1. The server can be accessed at a URL using the **name** given in the `manifest.yml` file (for example,  <https://my-app-name.bluemix.net>).
+
+### 4. Run the mobile application
+
+To run the mobile application (using real device):
+
+1. Go to the `project-alpha/mobile-app` directory of the cloned repo.
+1. Copy the `.env.example` file in the `project-alpha/mobile-app` directory, and create a file named `.env`.
+1. Edit the newly created `.env` file:
+    - Update the `API_URL` with the URL to the server app launched in the previous step.
+1. From a terminal:
+    1. Go to the `starter-kit/mobile-app` directory.
+    1. Install the dependencies: `npm install`.
+    1. **iOS only**: Go to the `ios` directory: `cd ios`.
+    1. **iOS only**: Install pod dependencies: `pod install`.
+    1. **iOS only**: Return to the `mobile-app` directory: `cd ../`.
+    1. Launch the app in the simulator/emulator:
+        - **iOS only**: `npm run ios`
+            > **Note**: You should be running at least iOS 13.0. The first time you launch the simulator, you should ensure that you set a Location in the Features menu.
+        - **Android only**: `npm run android`
+            > **Note**: Your Android Studio needs to have the `Android 9 (Pie)` SDK and a `Pie API Level 28` virtual device    
