@@ -221,7 +221,7 @@ With the application running in the simulator/emulator, you should be able to na
 ![Map Screen](/images/05-map-screen.png)
 
 
-### 6. Resources
+## Resources
 
 - [IBM Cloud](https://www.ibm.com/cloud)
 - [IBM Cloudant](https://cloud.ibm.com/docs/Cloudant?topic=cloudant-overview)
@@ -229,5 +229,5 @@ With the application running in the simulator/emulator, you should be able to na
 - [Node.js](https://nodejs.org)
 - [React Native](https://reactnative.dev/)
 
-### 7. Authors
+## Authors
 - Mridul Paul
