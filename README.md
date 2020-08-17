@@ -15,6 +15,7 @@ Pl visit  [![Website](https://img.shields.io/badge/View-Website-blue)](https://c
 1. [Running the tests](#running-the-tests)
 1. [Resources](#resources)
 1. [Authors](#authors)
+1. [Acknowledgments](#acknowledgments)
 
 ## Short description
 
@@ -230,4 +231,12 @@ With the application running in the simulator/emulator, you should be able to na
 - [React Native](https://reactnative.dev/)
 
 ## Authors
+
 - Mridul Paul
+
+## Acknowledgments
+
+- IBM Starter kit, [Call-for-Code/Solution-Starter-Kit-Cooperation-2020](https://github.com/Call-for-Code/Solution-Starter-Kit-Cooperation-2020)
+- [QR code scan logic](https://github.com/nimiq/qr-scanner)
+
+
